@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Quick Quiz — Dark UI</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="brand" role="img" aria-label="Quick Quiz logo">
+				<span class="logo-mark">Q</span>
+				<span class="brand-title">Quick Quiz</span>
+			</div>
+			<nav class="site-nav" aria-label="Primary">
+				<button class="nav-btn" data-target="page-home">Home</button>
+				<button class="nav-btn" data-target="page-quiz">Quiz</button>
+				<button class="nav-btn" data-target="page-results">Results</button>
+			</nav>
+			<div class="header-actions">
+				<button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle theme">🌓</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="app-main">
+		<section id="page-home" class="page active">
+			<div class="quiz-card">
+				<h2 class="card-title">Welcome</h2>
+				<p class="lead">Sharpen your knowledge with a short, friendly quiz. Ready to start?</p>
+				<div class="card-actions">
+					<button id="startBtn" class="btn primary large">Start Quiz</button>
+				</div>
+			</div>
+		</section>
+
+		<section id="page-quiz" class="page" hidden>
+			<div class="quiz-card" id="quizCard" aria-live="polite">
+				<header class="quiz-header">
+					<h1 class="quiz-title">Quick Quiz</h1>
+					<div id="progress" class="progress" aria-hidden="true">Question 1 / 5</div>
+				</header>
+
+				<section class="question-area">
+					<p id="questionText" class="question-text"></p>
+					<ul id="optionsList" class="options-list" role="list"></ul>
+				</section>
+
+				<footer class="quiz-footer">
+					<button id="nextBtn" class="btn primary" disabled>Next</button>
+					<button id="submitBtn" class="btn primary" hidden>Submit</button>
+				</footer>
+			</div>
+		</section>
+
+		<section id="page-results" class="page" hidden>
+			<div class="quiz-card results-card">
+				<h2 class="card-title">Results</h2>
+				<p id="finalScoreText" class="result-text"></p>
+				<div class="card-actions">
+					<button id="restartBtn" class="btn">Restart Quiz</button>
+					<button id="backHomeBtn" class="btn">Back to Home</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="script.js" defer></script>
+</body>
+</html>
+
+
